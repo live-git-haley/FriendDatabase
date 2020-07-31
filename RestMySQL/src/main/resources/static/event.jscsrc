@@ -1,0 +1,51 @@
+{
+            "id": "2130310",
+            "sport_id": "12",
+            "time": "1579477200",
+            "time_status": "3",
+            "league": {
+                "id": "459",
+                "name": "NFL",
+                "cc": "us"
+            },
+            "home": {
+                "id": "4294",
+                "name": "GB Packers",
+                "image_id": "4420",
+                "cc": "us"
+            },
+            "away": {
+                "id": "8806",
+                "name": "SF 49ers",
+                "image_id": "4389",
+                "cc": "us"
+            },
+            "ss": "20-37",
+            "scores": {
+                "1": {
+                    "home": "0",
+                    "away": "7"
+                },
+                "2": {
+                    "home": "0",
+                    "away": "20"
+                },
+                "3": {
+                    "home": "0",
+                    "away": "27"
+                },
+                "4": {
+                    "home": "7",
+                    "away": "7"
+                },
+                "5": {
+                    "home": "13",
+                    "away": "3"
+                },
+                "7": {
+                    "home": "20",
+                    "away": "37"
+                }
+            }
+        }
+       
