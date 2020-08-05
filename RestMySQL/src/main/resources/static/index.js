@@ -1,51 +1,71 @@
 function initialize(){
 
-    getStudents("/api/students");
+    getFriends("/api/friends");
     //renderModol("createStudent");
 }
 
-function getStudents(url){
+function getFriends(url){
     var xhttpList = new XMLHttpRequest();
     xhttpList.onreadystatechange = function(){
 
         if(this.readyState == 4 && this.status == 200){
-            renderStudent(this.responseText);
+            renderFriend(this.responseText);
         }
     };
     xhttpList.open("GET", url, true);
     xhttpList.send();
-    console.log("Student list received");
+    console.log("Friend list received");
 }
-var test = 1;
-function renderStudent(data){
+
+
+function renderFriend(data){
 
     var json = JSON.parse(data);
     let index2 = 1;
     var counter = 1;
-    
 
    for(var index = 0; index < json.length; index++){
     var imgName = json[index].firstName.toLowerCase();
-    var modalPurpose = "index" + json[index].id;
     var path  = "img/"+ imgName +".jpeg";
-    var cardHtml = '<h2>Our Dogs</h2>'
-        + '<div class="card bg-primary" id = "' + json[index].id+'" style="width:400px">'
+    var element  = "index"+ index2;
+    if(index % 4 == 0){
+    	cardHtml = '<div class = "widen" width = 1000px >' + cardHtml + '</div>';
+    }
+    
+    var cardHtml = '  <h2> '+ json[index].firstName + '</h2>'
+        + '<div class="card bg-primary" id = "dogs" style="width:400px">'
         + '<img class="card-img-top" src= "img/'+ imgName +'.jpeg" alt="'+ path +'" style="width:100%">'
         + '<div class="card-body">'
         + '<h4 class="card-title">' + json[index].firstName + ' ' + json[index].lastName + '</h4>'
-        + '<p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>'
-        + '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#'+ modalPurpose +'">Info</button>'
-
-        +'<button class = "btn btn-danger" onclick = "deleteStudent(' + json[index].id + ')">Delete</button>'
-        + '<br> ' 
+        + '<p class="card-text"> DUMMY TEXT GOES HERE </p>'
+        + renderModol("info") 
+        
+        +'<a href="#" class="btn btn-warning">DELETE</a>'
+        + '<br> ' + element 
         + '<br> </div>'
         + '</div>';
     
-    document.getElementById("students").insertAdjacentHTML('beforeend',cardHtml);
-    renderModol(modalPurpose, json[index].id, json[index]);
-    test = json[index].id;
+    document.getElementById("friends").insertAdjacentHTML('beforeend',cardHtml);
+    
+    index2++;
+    test = index2;
+   
     }
 }
+
+function getFriendLocations(url){
+    var xhttpList = new XMLHttpRequest();
+    xhttpList.onreadystatechange = function(){
+
+        if(this.readyState == 4 && this.status == 200){
+            renderFriend(this.responseText);
+        }
+    };
+    xhttpList.open("GET", url, true);
+    xhttpList.send();
+    console.log("Friend locations recieved");
+}
+
 
 function renderModol(modalPurpose, id, data){
 	
@@ -64,7 +84,7 @@ function renderModol(modalPurpose, id, data){
     + '</div>'
 
     + '<div class="modal-body">'
-    + data.info 
+   // + data.info 
     + '</div>'
    
     + '<div class="modal-footer">'
@@ -81,8 +101,8 @@ function renderModol(modalPurpose, id, data){
 
 }
 
-function deleteStudent(id){
-    var link = "/api/delete/student/" + id;
+function deleteFriend(id){
+    var link = "/api/delete/friend/" + id;
     var ok = confirm("Are you sure you want to delete this dog?\n Press 'ok' to continue, or cancel to avoid.");
     if(ok == true){
         var xhttp = new XMLHttpRequest();

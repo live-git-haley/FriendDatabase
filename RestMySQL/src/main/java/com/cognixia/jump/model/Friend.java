@@ -10,7 +10,7 @@ import javax.persistence.Id;
 
 
 @Entity
-public class Student implements Serializable{
+public class Friend implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
@@ -25,29 +25,26 @@ public class Student implements Serializable{
 	@Column(name = "lastname")
 	private String lastName;
 	
-	@Column(unique = true, nullable = false)
-	private String email;
-	
-	@Column(columnDefinition = "varchar(100) default 'Undecided'")
-	private String department;
+
+	@Column(columnDefinition = "varchar(100)")
+	private String location;
 	
 	@Column(name = "info")
 	private String info;
 	
 	
 
-	public Student(Long id, String firstName, String lastName, String email, String department, String info) {
+	public Friend(Long id, String firstName, String lastName, String location, String info) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.email = email;
-		this.department = department;
+		this.location = location;
 		this.info = info;
 	}
 	
-	public Student() {
-		this(-1L, "NA", "NA", "NA", "NA", "NA");
+	public Friend() {
+		this(-1L, "NA", "NA", "NA", "NA");
 	}
 	
 	
@@ -83,21 +80,14 @@ public class Student implements Serializable{
 		this.lastName = lastName;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getLocation() {
+		return location;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setLocation(String location) {
+		this.location = location;
 	}
 
-	public String getDepartment() {
-		return department;
-	}
-
-	public void setDepartment(String department) {
-		this.department = department;
-	}
 
 	
 	
