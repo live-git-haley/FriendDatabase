@@ -2,21 +2,70 @@
 <html lang="en-US">
 
 <head>
-    <!-- USING BOOTSTRAP 4 -->
-    <!-- Meta -->
+  
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- JavaScript -->
+   
+        
+       
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="index.js"></script>
-    <!-- CSS -->
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="index.css">
+
+    
     <title>Friend Repository</title>
+  
 </head>
 
 <body class="containter-fluid bg-light" onload="initialize()">
+<div class = "navBar">
+<ul class="nav justify-content-center">
+  <li class="nav-item">
+    <a class="nav-link active" href="#">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="addFriend.html">Add</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" href="mapTest.html">Locations</a>
+  </li>
+</ul>
+</div>
+
+ <h2>Friend Repository</h2>
+<!--     <div id ="modals"></div> -->
+    <!-- Button to Open the Modal -->
+<!--     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"> -->
+<!--       Open modal -->
+<!--     </button> -->
+    
+    <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      Modal content
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <p>Some text in the modal.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+    
+  
 
     <!-- Page Content Below -->
     <div id="pageLayout" class="d-flex row" style="padding-top: 5%">
@@ -27,12 +76,9 @@
 
     </div>
 
-    <h2>HTML Modal</h2>
-    <div id ="modals"></div>
-    <!-- Button to Open the Modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-      Open modal
-    </button>
+  <a href="addFriend.html" class="btn btn-primary">Add A Friend</a>
+  
+  
 
 </body>
 

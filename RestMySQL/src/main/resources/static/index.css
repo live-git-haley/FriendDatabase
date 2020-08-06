@@ -1,0 +1,41 @@
+body{
+    background-image: url("img/bg2.jpg");
+    	font-family: "Times New Roman";
+    
+    }
+
+  .card bg-primary{
+        background-color: red;
+    }
+
+.card-deck{
+	
+	width:1000px;
+}
+
+.card-header{
+		font-size: 20px;
+	
+	
+}
+
+.card-deck img{
+	
+	flex-shrink: 0;
+    min-width: 100%;
+    min-height: 60%
+}
+
+
+
+
+.form-group{
+    width : 300px;
+}
+
+.navBar{
+	font-size: 25px;
+	height: 50px;
+	background-color:#E8E8E8;
+	font-family: "Times New Roman";
+}
