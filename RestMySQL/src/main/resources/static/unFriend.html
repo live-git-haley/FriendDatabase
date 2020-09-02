@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+        
+       
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="unfriend.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="index.css">
+
+    </head>
+    <body onload="addTable()">
+   <h1>
+    Unfriend
+</h1>
+<div class="myTable" id="myTable"> </div>
+<form class="form-inline" onsubmit="deleteFriend()">
+   
+<div class="form-group">
+      <label for="ID"> ID  </label>
+      <input type="text" class="form-control" id = "id" name="id" placeholder="Enter id">
+
+    </div>
+
+    
+   
+
+      <input type="submit" value="Submit">
+  </form>
+  
+<h3>  <a href="index.html">Back to Homepage</a></h3>
+
+
+</body>
+
+</html>

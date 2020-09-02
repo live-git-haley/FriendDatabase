@@ -39,11 +39,7 @@ function friendCards(){
     var friend= document.getElementById("friends");
     
     var allFriends = JSON.parse(localStorage.getItem("allFriends"));
-    console.log(allFriends[3].firstName);
-    console.log(allFriends[4].firstName);
-    console.log(allFriends[5].firstName);
-    console.log(allFriends[6].firstName);
-
+   
     console.log(allFriends.length);
 
     for(var index = 0; index < allFriends.length; index++){
@@ -60,7 +56,7 @@ function friendCards(){
             card.classList.add("rounded");
            // card.classList.add("bg-primary");
             card.classList.add("col-5");
-            card.style.margin = "0.50rem";
+            card.style.margin = "0.70rem";
             
 
             //Make the card components
@@ -152,6 +148,17 @@ function friendCards(){
    
 
 function deleteFriend(id){
+    var allFriends = JSON.parse(localStorage.getItem("allFriends"));
+    var table =  document.createElement("table");
+    table.classList.add("table");
+    t
+
+    for(var index = 0; index < allFriends.length; index++){
+            
+
+    }
+
+    var name = document.getElementById("firstname").value;
     var link = "/api/delete/friend/" + id;
     var ok = confirm("Are you sure you want to delete this dog?\n Press 'ok' to continue, or cancel to avoid.");
     if(ok == true){
@@ -239,3 +246,5 @@ function createFriend() {
     }
 
     $('#myModal').modal('show');
+
+      //addTable();
